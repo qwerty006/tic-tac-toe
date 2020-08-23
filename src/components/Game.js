@@ -46,8 +46,8 @@ const Game = () => {
             <Board squares={board} onClick={handleClick}/>
             <div style={styles}>
                 <p>
-                    {winner ? 'Winner: '+ winner : (firstMove? 'First Player: ':"Next Player: ")}
-                        <b>{(xIsNext ? 'X' : 'O')}</b>
+                    {winner ? 'Winner: '+ <b>{winner}</b> : (firstMove? 'First Player: ':"Next Player: ")}
+                    {firstMove?<b>{(xIsNext ? 'X' : 'O')}</b>: <></>}
                 </p>
                 {renderMoves()}
             </div>
