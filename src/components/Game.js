@@ -32,6 +32,10 @@ const Game = () => {
         setXisNext(!xIsNext);
     }
 
+    const boldValue = ()=>{ return(
+        <b>{winner? (xIsNext ? 'O' : 'X'): (xIsNext ? 'X' : 'O')}</b>
+    )
+    }
 
     const renderMoves = () => {
         return (
@@ -46,8 +50,8 @@ const Game = () => {
             <Board squares={board} onClick={handleClick}/>
             <div style={styles}>
                 <p>
-                    {winner ? 'Winner: '+ <b>{winner}</b> : (firstMove? 'First Player: ':"Next Player: ")}
-                    {firstMove?<b>{(xIsNext ? 'X' : 'O')}</b>: <></>}
+                    {winner ? 'Winner: ': (firstMove? "First Player: ":"Next Player: ")}
+                    {boldValue()}
                 </p>
                 {renderMoves()}
             </div>
